@@ -249,7 +249,7 @@ public class CreateJPanel extends javax.swing.JPanel {
          f.setAirport(airport);
          f.setFlighttime(flighttime);
          f.getAirplane().setAirliner(airliner);
-         f.getAirplane().setExpiredate(expdate);
+         f.getAirplane().setExpired(expdate);
          f.getAirplane().setAvalable(ava);
          f.getAirplane().setManufacturer(manuf);
          f.getAirplane().setManufactureyear(manuyear);

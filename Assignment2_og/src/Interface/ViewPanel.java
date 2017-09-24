@@ -51,8 +51,6 @@ public class ViewPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
-        buttonGroup2 = new javax.swing.ButtonGroup();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblFlight = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
@@ -69,19 +67,19 @@ public class ViewPanel extends javax.swing.JPanel {
         SerialNumTextField = new javax.swing.JTextField();
         SeatsTextField = new javax.swing.JTextField();
         UDTextField = new javax.swing.JTextField();
+        ExpDateTextField = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         ManuTextField = new javax.swing.JTextField();
         ManuYearTextField = new javax.swing.JTextField();
         ModelNumTextField = new javax.swing.JTextField();
         FlightTimeTextField = new javax.swing.JTextField();
         AirportTextField = new javax.swing.JTextField();
+        AvailabelCheckBox = new javax.swing.JCheckBox();
         jLabel14 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        AVATextField = new javax.swing.JTextField();
-        EXPTextField = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
 
         tblFlight.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -136,6 +134,8 @@ public class ViewPanel extends javax.swing.JPanel {
 
         jLabel13.setText("Update Date");
 
+        jLabel8.setText("Expire Date");
+
         ManuTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ManuTextFieldActionPerformed(evt);
@@ -154,13 +154,18 @@ public class ViewPanel extends javax.swing.JPanel {
             }
         });
 
+        AvailabelCheckBox.setText("Yes");
+        AvailabelCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AvailabelCheckBoxActionPerformed(evt);
+            }
+        });
+
         jLabel14.setText("Airport");
 
         jLabel10.setText("FlightTime");
 
-        jLabel12.setText("Avalable");
-
-        jLabel8.setText("Expired");
+        jLabel11.setText("Avalable");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -187,53 +192,52 @@ public class ViewPanel extends javax.swing.JPanel {
                             .addComponent(jLabel1)
                             .addComponent(jLabel9))
                         .addGap(30, 30, 30)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(EXPTextField)
-                            .addComponent(ManuTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
-                            .addComponent(AirlinerTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
-                            .addComponent(ManuYearTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
-                            .addComponent(ModelNumTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
-                            .addComponent(SerialNumTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
-                            .addComponent(SeatsTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
-                            .addComponent(UDTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(ManuTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(AirlinerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(ManuYearTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(ModelNumTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(SerialNumTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(SeatsTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(UDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ExpDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(55, 55, 55)
+                                .addComponent(btnViewDetails))
                             .addGroup(layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnDelete))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGap(86, 86, 86)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(55, 55, 55)
-                                        .addComponent(btnViewDetails))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(86, 86, 86)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel10)
+                                            .addComponent(jLabel14)
+                                            .addComponent(jLabel11))
+                                        .addGap(18, 18, 18)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jButton3)
-                                                .addGap(33, 33, 33)
-                                                .addComponent(jButton4))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                        .addComponent(jLabel10)
-                                                        .addComponent(jLabel14))
-                                                    .addComponent(jLabel12))
-                                                .addGap(18, 18, 18)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(AirportTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
-                                                    .addComponent(FlightTimeTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
-                                                    .addComponent(AVATextField))))))
-                                .addGap(111, 111, 111)))))
-                .addContainerGap(128, Short.MAX_VALUE))
+                                            .addComponent(AirportTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(FlightTimeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(AvailabelCheckBox)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jButton3)
+                                        .addGap(33, 33, 33)
+                                        .addComponent(jButton4)))))))
+                .addContainerGap(239, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(75, 75, 75)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -247,16 +251,17 @@ public class ViewPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
                             .addComponent(FlightTimeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(27, 27, 27)
+                        .addGap(24, 24, 24)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel12)
-                            .addComponent(AVATextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(73, 73, 73)
+                            .addComponent(jLabel11)
+                            .addComponent(AvailabelCheckBox))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton3)
-                            .addComponent(jButton4)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 158, Short.MAX_VALUE)
+                            .addComponent(jButton4))
+                        .addGap(149, 149, 149))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -286,12 +291,12 @@ public class ViewPanel extends javax.swing.JPanel {
                         .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel13)
-                            .addComponent(UDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(EXPTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34))
+                            .addComponent(UDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(19, 19, 19)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(ExpDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(50, 50, 50))))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -329,6 +334,10 @@ public class ViewPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_ModelNumTextFieldActionPerformed
 
+    private void AvailabelCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AvailabelCheckBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AvailabelCheckBoxActionPerformed
+
     private void btnViewDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDetailsActionPerformed
         int selectedrow=tblFlight.getSelectedRow();
         if(selectedrow>=0)
@@ -336,15 +345,16 @@ public class ViewPanel extends javax.swing.JPanel {
             Flight fl=(Flight)tblFlight.getValueAt(selectedrow, 0);
             AirlinerTextField.setText(fl.getAirplane().getAirliner());
             AirportTextField.setText(fl.getAirport());
+            //AvailabelCheckBox.set
             UDTextField.setText(fl.getAirplane().getUpdatedate());
-            AVATextField.setText(fl.getAirplane().getAvalable());
+            ExpDateTextField.setText(fl.getAirplane().getExpiredate());
             FlightTimeTextField.setText(fl.getFlighttime());
             ManuYearTextField.setText(String.valueOf(fl.getAirplane().getManufactureyear()));
             ModelNumTextField.setText(fl.getAirplane().getModelnumber());
             SeatsTextField.setText(String.valueOf(fl.getAirplane().getSeatnumber()));
             SerialNumTextField.setText(String.valueOf(fl.getAirplane().getSerialnumber()));
             ManuTextField.setText(fl.getAirplane().getManufacturer());
-            EXPTextField.setText(fl.getAirplane().getExpiredate());
+            
           
         }
         else
@@ -357,10 +367,10 @@ public class ViewPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField AVATextField;
     private javax.swing.JTextField AirlinerTextField;
     private javax.swing.JTextField AirportTextField;
-    private javax.swing.JTextField EXPTextField;
+    private javax.swing.JCheckBox AvailabelCheckBox;
+    private javax.swing.JTextField ExpDateTextField;
     private javax.swing.JTextField FlightTimeTextField;
     private javax.swing.JTextField ManuTextField;
     private javax.swing.JTextField ManuYearTextField;
@@ -370,13 +380,11 @@ public class ViewPanel extends javax.swing.JPanel {
     private javax.swing.JTextField UDTextField;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnViewDetails;
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;

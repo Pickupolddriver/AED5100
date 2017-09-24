@@ -18,7 +18,7 @@ public class airplane {
     private int serialnumber;
     private String expiredate;
     private String updatedate;
-    private String avalable;
+    private boolean avalable;
 
     public String getAirliner() {
         return airliner;
@@ -84,11 +84,11 @@ public class airplane {
         this.updatedate = updatedate;
     }
 
-    public String getAvalable() {
+    public boolean isAvalable() {
         return avalable;
     }
 
-    public void setAvalable(String avalable) {
+    public void setAvalable(boolean avalable) {
         this.avalable = avalable;
     }
 

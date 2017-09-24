@@ -16,7 +16,7 @@ public class airplane {
     private String modelnumber;
     private int seatnumber;
     private int serialnumber;
-    private String expiredate;
+    private String expired;
     private String updatedate;
     private String avalable;
 
@@ -68,13 +68,15 @@ public class airplane {
         this.serialnumber = serialnumber;
     }
 
-    public String getExpiredate() {
-        return expiredate;
+    public String getExpired() {
+        return expired;
     }
 
-    public void setExpiredate(String expiredate) {
-        this.expiredate = expiredate;
+    public void setExpired(String expired) {
+        this.expired = expired;
     }
+
+   
 
     public String getUpdatedate() {
         return updatedate;
