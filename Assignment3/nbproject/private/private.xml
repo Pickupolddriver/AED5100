@@ -3,8 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/lijianxi/5100lab/li_jianxi_001824796/HW4/src/UserInterface/ManageAirliners/ManageAirliners.java</file>
-            <file>file:/Users/lijianxi/5100lab/li_jianxi_001824796/HW4/src/UserInterface/ManageCustomers/ManageCustomersJPanel.java</file>
+            <file>file:/Users/lijianxi/5100lab/li_jianxi_001824796/Assignment3/src/UserInterface/ManageFlights/ManageFlightsJPanel.java</file>
+            <file>file:/Users/lijianxi/5100lab/li_jianxi_001824796/Assignment3/src/UserInterface/ManageFlights/ViewFlightJPanel.java</file>
+            <file>file:/Users/lijianxi/5100lab/li_jianxi_001824796/Assignment3/src/Business/SeatList.java</file>
+            <file>file:/Users/lijianxi/5100lab/li_jianxi_001824796/Assignment3/src/Business/Flight.java</file>
         </group>
     </open-files>
 </project-private>
