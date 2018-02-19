@@ -5,8 +5,10 @@
  */
 package UserInterface.ManageFlights;
 
+import Business.Airliner;
 import Business.Flight;
 import Business.TravelAgency;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -68,6 +70,7 @@ public class MasterManagerJP extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblReturn = new javax.swing.JTable();
+        btnCanel = new javax.swing.JButton();
 
         tblFlights.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -127,6 +130,13 @@ public class MasterManagerJP extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(tblReturn);
 
+        btnCanel.setText("Cancel Flight");
+        btnCanel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCanelActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -154,6 +164,8 @@ public class MasterManagerJP extends javax.swing.JPanel {
                             .addComponent(txtTo))
                         .addGap(49, 49, 49)
                         .addComponent(btnSearch)
+                        .addGap(35, 35, 35)
+                        .addComponent(btnCanel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnBack)
                         .addGap(62, 62, 62))))
@@ -170,7 +182,8 @@ public class MasterManagerJP extends javax.swing.JPanel {
                     .addComponent(jLabel2)
                     .addComponent(txtFrom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSearch)
-                    .addComponent(btnBack))
+                    .addComponent(btnBack)
+                    .addComponent(btnCanel))
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -214,9 +227,31 @@ public class MasterManagerJP extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBackActionPerformed
 
+    private void btnCanelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCanelActionPerformed
+        // TODO add your handling code here:
+         int row = tblFlights.getSelectedRow();
+
+        if (row < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row from the table first", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        } else {
+            Flight f1 = (Flight) tblFlights.getValueAt(row, 0);
+            travelagency.getMasterschedule().removeFlight(f1);
+            String airlinername=f1.getAirliner();
+            for(Airliner a1:travelagency.getAirlinerdirectory().getAirlinerList()){
+                if(a1.getName().equals(airlinername)){
+                    a1.getFs().deleteFlight(f1);
+                }
+            }
+            refreshTable();
+
+        }
+    }//GEN-LAST:event_btnCanelActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnCanel;
     private javax.swing.JButton btnSearch;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

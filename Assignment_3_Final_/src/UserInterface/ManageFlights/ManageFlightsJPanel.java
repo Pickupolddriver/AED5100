@@ -75,6 +75,7 @@ public class ManageFlightsJPanel extends javax.swing.JPanel {
         btnViewFlight = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         txtAirliner = new javax.swing.JTextField();
+        btnCancel = new javax.swing.JButton();
 
         jLabel1.setText("Manage Flight");
 
@@ -113,6 +114,13 @@ public class ManageFlightsJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnCancel.setText("Cancel Flight");
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -134,6 +142,8 @@ public class ManageFlightsJPanel extends javax.swing.JPanel {
                         .addGap(51, 51, 51)
                         .addComponent(txtAirliner, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnCancel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnNewFlight)
                     .addComponent(btnViewFlight))
@@ -152,7 +162,9 @@ public class ManageFlightsJPanel extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnViewFlight))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(btnViewFlight)
+                                    .addComponent(btnCancel)))
                             .addComponent(jLabel2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnNewFlight)))
@@ -186,8 +198,25 @@ public class ManageFlightsJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAirlinerActionPerformed
 
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+        // TODO add your handling code here:
+         int row = tblFlights.getSelectedRow();
+
+        if (row < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row from the table first", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        } else {
+            Flight f1 = (Flight) tblFlights.getValueAt(row, 0);
+            airliner.getFs().deleteFlight(f1);
+            refreshTable();
+            travelagency.getMasterschedule().removeFlight(f1);
+
+        }
+    }//GEN-LAST:event_btnCancelActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnNewFlight;
     private javax.swing.JButton btnViewFlight;
     private javax.swing.JLabel jLabel1;

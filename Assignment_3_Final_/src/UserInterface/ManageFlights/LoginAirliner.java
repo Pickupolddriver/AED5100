@@ -67,7 +67,7 @@ public class LoginAirliner extends javax.swing.JPanel {
             }
         });
 
-        btnManager.setText("Who's yout daddy");
+        btnManager.setText("I'm the Manager");
         btnManager.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManagerActionPerformed(evt);
@@ -81,7 +81,7 @@ public class LoginAirliner extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(140, 140, 140)
                 .addComponent(btnManager)
-                .addContainerGap(105, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)

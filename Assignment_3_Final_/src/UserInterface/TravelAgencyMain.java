@@ -5,6 +5,7 @@
  */
 package UserInterface;
 
+import Business.Airliner;
 import Business.AirlinerDirectory;
 import Business.TravelAgency;
 import UserInterface.ManageAirliners.ManageAirliners;
@@ -30,6 +31,12 @@ public class TravelAgencyMain extends javax.swing.JFrame {
     public TravelAgencyMain() {
         initComponents();
         travelagency = new TravelAgency();
+        Airliner a1=travelagency.getAirlinerdirectory().addAirliner();
+        a1.setName("Delta");
+        a1.setLocation("Boston");
+        Airliner a2=travelagency.getAirlinerdirectory().addAirliner();
+        a2.setName("JetBlue");
+        a2.setLocation("NewYorkCity");
     }
 
     /**
@@ -68,6 +75,7 @@ public class TravelAgencyMain extends javax.swing.JFrame {
         });
 
         btnSearch.setText("Search");
+        btnSearch.setEnabled(false);
 
         jLabel1.setText("CardSequenceJPanel");
 

@@ -44,7 +44,7 @@ public class ManageAirliners extends javax.swing.JPanel {
         for (Airliner s : ad.getAirlinerList()) {
             Object row[] = new Object[3];
             row[0] = s;
-            row[1]=s.getLocation();
+            row[1] = s.getLocation();
             //row[2]=s.getNumplane();
             model.addRow(row);
         }
@@ -183,7 +183,7 @@ public class ManageAirliners extends javax.swing.JPanel {
     }//GEN-LAST:event_btnViewAirlinerActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
-        
+
         int selecteRow = tblAirliner.getSelectedRow();
         if (selecteRow < 0) {
             JOptionPane.showMessageDialog(null, "Please selecte a row from the table first!", "Warining", JOptionPane.WARNING_MESSAGE);
@@ -203,10 +203,13 @@ public class ManageAirliners extends javax.swing.JPanel {
         if (row < 0) {
             JOptionPane.showMessageDialog(null, "Please select a row from the table first", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
+        } else {
+            Airliner a = (Airliner) tblAirliner.getValueAt(row, 0);
+            travelagency.getAirlinerdirectory().deleteAirliner(a);
+            refreshTable();
+
         }
-        Airliner a = (Airliner) tblAirliner.getValueAt(row, 0);
-        travelagency.getAirlinerdirectory().deleteAirliner(a);
-        refreshTable();
+
     }//GEN-LAST:event_btnDeleteActionPerformed
 
 
