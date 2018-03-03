@@ -37,6 +37,7 @@ public class AddFlightJPanel extends javax.swing.JPanel {
         TimeBox.addItem("morning");
         TimeBox.addItem("day");
         TimeBox.addItem("evening");
+        txtAirliner.setText(al.getName());
     }
 
     /**
@@ -73,6 +74,7 @@ public class AddFlightJPanel extends javax.swing.JPanel {
             }
         });
 
+        txtAirliner.setEditable(false);
         txtAirliner.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAirlinerActionPerformed(evt);
@@ -148,8 +150,9 @@ public class AddFlightJPanel extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btnBack)
                                     .addComponent(btnCreate)))
-                            .addComponent(TimeBox, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(153, Short.MAX_VALUE))
+                            .addComponent(TimeBox, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(63, 63, 63)))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

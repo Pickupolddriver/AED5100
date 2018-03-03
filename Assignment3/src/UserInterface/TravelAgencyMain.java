@@ -46,7 +46,6 @@ public class TravelAgencyMain extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         CardSequenceJPanel = new javax.swing.JPanel();
         btnManageAirliners = new javax.swing.JButton();
-        btnSearch = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnManageFlights = new javax.swing.JButton();
         btnManageCustomer = new javax.swing.JButton();
@@ -66,8 +65,6 @@ public class TravelAgencyMain extends javax.swing.JFrame {
                 btnManageAirlinersActionPerformed(evt);
             }
         });
-
-        btnSearch.setText("Search");
 
         jLabel1.setText("CardSequenceJPanel");
 
@@ -98,7 +95,6 @@ public class TravelAgencyMain extends javax.swing.JFrame {
                 .addGroup(CardSequenceJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnManageCustomer)
                     .addComponent(btnManageFlights)
-                    .addComponent(btnSearch)
                     .addComponent(btnManageAirliners))
                 .addGap(14, 14, 14))
         );
@@ -111,9 +107,7 @@ public class TravelAgencyMain extends javax.swing.JFrame {
                 .addComponent(btnManageFlights)
                 .addGap(18, 18, 18)
                 .addComponent(btnManageCustomer)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnSearch)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 212, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 253, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(16, 16, 16))
         );
@@ -198,7 +192,6 @@ public class TravelAgencyMain extends javax.swing.JFrame {
     private javax.swing.JButton btnManageAirliners;
     private javax.swing.JButton btnManageCustomer;
     private javax.swing.JButton btnManageFlights;
-    private javax.swing.JButton btnSearch;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JSplitPane jSplitPane1;

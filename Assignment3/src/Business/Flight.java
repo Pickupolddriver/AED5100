@@ -20,6 +20,7 @@ public class Flight {
     private String flytime;
     private String Date;
     private String serialNumber;
+    private int seatnum=180;
     //Morning,day,evening
     private Airplane airplane;
     private SeatList seatlist;
@@ -27,6 +28,16 @@ public class Flight {
     public Flight(){
         seatlist=new SeatList();
     }
+
+    public int getSeatnum() {
+        return seatnum;
+    }
+
+    public void setSeatnum(int seatnum) {
+        this.seatnum = seatnum;
+    }
+    
+    
     
     public String getDate() {
         return Date;

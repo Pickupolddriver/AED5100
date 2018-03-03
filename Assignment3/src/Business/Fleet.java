@@ -15,7 +15,10 @@ public class Fleet {
     
     private String airliner;
     private ArrayList<Airplane> fleet;
-
+ 
+    public Fleet() {
+        fleet = new ArrayList<Airplane>();
+    }
  
     public String getAirliner() {
         return airliner;
@@ -25,9 +28,7 @@ public class Fleet {
         this.airliner = airliner;
     }
 
-    public Fleet() {
-        fleet = new ArrayList<Airplane>();
-    }
+   
 
     public ArrayList getFleet() {
         return fleet;

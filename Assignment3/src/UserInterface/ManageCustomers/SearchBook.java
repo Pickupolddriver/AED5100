@@ -10,7 +10,9 @@ import Business.Flight;
 import Business.Person;
 import Business.TravelAgency;
 import UserInterface.ManageAirliners.ViewAirlinerJPanel;
+import UserInterface.ManageFlights.ManageFlightsJPanel;
 import java.awt.CardLayout;
+import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -76,7 +78,6 @@ public class SearchBook extends javax.swing.JPanel {
         txtFrom = new javax.swing.JTextField();
         txtTo = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
-        btnBack = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         txtAirliner = new javax.swing.JTextField();
         TimeBox = new javax.swing.JComboBox<>();
@@ -142,13 +143,6 @@ public class SearchBook extends javax.swing.JPanel {
             }
         });
 
-        btnBack.setText("<<Back");
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
-            }
-        });
-
         jLabel5.setText("Airliner");
 
         txtAirliner.addActionListener(new java.awt.event.ActionListener() {
@@ -198,9 +192,7 @@ public class SearchBook extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(btnBack)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(114, 114, 114)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 637, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
@@ -296,13 +288,8 @@ public class SearchBook extends javax.swing.JPanel {
                         .addGap(29, 29, 29)
                         .addComponent(btnBook)))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(16, 16, 16))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnBack)
-                        .addGap(59, 59, 59))))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -343,15 +330,12 @@ public class SearchBook extends javax.swing.JPanel {
                 row[5] = fl1.getDate();
                 dtm.addRow(row);
                 JOptionPane.showMessageDialog(null, "Sorry, we don't have the flight at the time you want", "Warining", JOptionPane.WARNING_MESSAGE);
-            }else{
-            JOptionPane.showMessageDialog(null, "Sorry, we dont have such Flight", "Warining", JOptionPane.WARNING_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "Sorry, we dont have such Flight", "Warining", JOptionPane.WARNING_MESSAGE);
             }
         }
     }//GEN-LAST:event_btnSearchActionPerformed
 
-    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBackActionPerformed
 
     private void txtAirlinerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAirlinerActionPerformed
         // TODO add your handling code here:
@@ -375,17 +359,23 @@ public class SearchBook extends javax.swing.JPanel {
         p1.setID(txtID.getText());
         p1.setName(txtName.getText());
         p1.setGender(txtGender.getText());
-        JOptionPane.showMessageDialog(null, "successfully book the flight", "Warning", JOptionPane.INFORMATION_MESSAGE);
-        txtName.setText("");
-        txtID.setText("");
-        txtGender.setText("");
+        
+       
         refreshTable();
         int selecteRow = tblReturn.getSelectedRow();
         if (selecteRow < 0) {
             JOptionPane.showMessageDialog(null, "Please selecte a row from the table first!", "Warining", JOptionPane.WARNING_MESSAGE);
         } else {
             Flight f1 = (Flight) tblReturn.getValueAt(selecteRow, 0);
-            f1.getSeatlist().addPerson(p1);
+            if (f1.getSeatlist().getPersonlist().size() < f1.getSeatnum()) {
+                f1.getSeatlist().addPerson(p1);
+                JOptionPane.showMessageDialog(null, "successfully book the flight", "Info", JOptionPane.INFORMATION_MESSAGE);
+                 txtName.setText("");
+        txtID.setText("");
+        txtGender.setText("");
+            }else{
+                JOptionPane.showMessageDialog(null, "Sorry, this flight do not have enough seats", "Warning", JOptionPane.INFORMATION_MESSAGE);
+            }
 
         }
     }//GEN-LAST:event_btnBookActionPerformed
@@ -393,10 +383,7 @@ public class SearchBook extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> TimeBox;
-    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnBook;
-    private javax.swing.JButton btnCreate;
-    private javax.swing.JButton btnCreate1;
     private javax.swing.JButton btnSearch;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
