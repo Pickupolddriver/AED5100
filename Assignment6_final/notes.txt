@@ -1,0 +1,5 @@
+Added the workqueue as an variable in business class, and initialized it in the Business class's constructor, getters and setters as well in the Business class
+Added the addWorkRequest() method in WorkQueue class
+Added the method to create a new order in the WorkRequest class's constructor, so whenever a WorkRequest is created, a new order will be created along with it
+
+
